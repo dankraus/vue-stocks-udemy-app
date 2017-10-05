@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <app-header></app-header>
+        <app-the-nav-header />
         <div class="row">
             <div class="col-xs-12">
                 <transition name="slide" mode="out-in">
@@ -12,20 +12,20 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
+import TheNavHeader from './components/TheNavHeader.vue';
 import { mapActions } from 'vuex';
 
 export default {
     components: {
-        appHeader: Header
+        appTheNavHeader: TheNavHeader
+    },
+    created() {
+        this.initStocks();
     },
     methods: {
         ...mapActions('stocks', [
             'initStocks'
         ])
-    },
-    created() {
-        this.initStocks();
     }
 }
 </script>

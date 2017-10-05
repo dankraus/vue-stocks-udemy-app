@@ -1,20 +1,24 @@
 <template>
   <div>
     <h1>Stocks</h1>
-    <app-stock 
+    <app-stock-item 
       v-for="stock in stocks" 
       :key="stock.id"
       :id="stock.id"
       :symbol="stock.symbol"
-      :price="stock.price"></app-stock>
+      :price="stock.price"/>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import Stock from './Stock.vue';
+import StockItem from './StockItem.vue';
 
 export default {
+  name: 'StockList',
+  components: {
+    appStockItem: StockItem
+  },
   data() {
     return {
       
@@ -24,9 +28,6 @@ export default {
     ...mapGetters('stocks', [
       'stocks'
     ])
-  },
-  components: {
-    appStock: Stock
   }
 }
 </script>

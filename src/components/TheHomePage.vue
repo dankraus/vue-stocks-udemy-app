@@ -10,6 +10,7 @@
 import { mapGetters } from 'vuex';
 
 export default {
+    name: 'TheHomePage',
     computed: {
         ...mapGetters('portfolio', [
             'funds'

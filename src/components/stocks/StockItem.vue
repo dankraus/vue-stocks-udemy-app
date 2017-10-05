@@ -17,17 +17,21 @@
             v-model="quantity">
 
           <transition name="bounce">
-            <div v-if="isPurchased" class="purchased">Purchased!</div>
+            <div 
+              v-if="isPurchased" 
+              class="purchased">Purchased!</div>
           </transition>
           <transition name="bounce">
-            <div v-if="hasInsufficentFunds" class="insufficentFunds">Insufficent Funds!</div>
+            <div 
+              v-if="hasInsufficentFunds" 
+              class="insufficentFunds">Insufficent Funds!</div>
           </transition>
         </div>
         <div class="pull-right">
           <button
             class="btn btn-success"
-            @click="buyStock"
             :disabled="this.quantity <= 0 || hasInsufficentFunds"
+            @click="buyStock"
             >Buy</button>
         </div>
       </div>
@@ -39,6 +43,7 @@
 import { mapGetters } from 'vuex';
 
 export default {
+  name: 'StockItem',
   props: {
     id: {
       type: [String, Number],
@@ -46,7 +51,10 @@ export default {
     },
     symbol: {
       type: String,
-      required: true
+      required: true,
+      validator: function(value) {
+        return value.length > 0 ? true : false
+      }
     },
     price: {
       type: Number,

@@ -3,25 +3,32 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <router-link :to="{ name: 'Home' }" class="navbar-brand">Stock Trader</router-link>
+                <router-link 
+                    class="navbar-brand"
+                    :to="{ name: 'Home' }">Stock Trader</router-link>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <router-link 
-                        :to="{ name: 'Portfolio' }"
                         tag="li"
-                        class="nav-item"><a class="nav-link">Portfolio</a></router-link>
+                        class="nav-item"
+                        :to="{ name: 'Portfolio' }"><a class="nav-link">Portfolio</a></router-link>
                     <router-link 
-                        :to="{ name: 'Stocks' }"
                         tag="li"
-                        class="nav-item"><a class="nav-link">Stocks</a></router-link>
+                        class="nav-item"
+                        :to="{ name: 'Stocks' }"><a class="nav-link">Stocks</a></router-link>
                 </ul>
                 <strong class="navbar-text navbar-right">Funds {{ funds | currency }}</strong>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" @click="endDay">End Day</a></li>
-                    <li class="dropdown" 
+                    <li>
+                        <a 
+                            href="#" 
+                            @click="endDay">End Day</a>
+                    </li>
+                    <li 
+                        class="dropdown" 
                         :class="{ open: isDropdownOpen }"
                         @click="isDropdownOpen = !isDropdownOpen">
                     <a 
@@ -46,6 +53,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
+    name: 'TheNavHeader',
     data() {
         return {
             isDropdownOpen: false

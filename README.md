@@ -16,3 +16,6 @@ npm run build
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+Follow [VueJS Style guide](https://vuejs.org/v2/style-guide/)
+[And this guide](https://github.com/pablohpsilva/vuejs-component-style-guide)

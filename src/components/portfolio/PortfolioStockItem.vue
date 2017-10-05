@@ -42,6 +42,7 @@
 import { mapActions } from 'vuex';
 
 export default {
+  name: 'PortfolioStockItem',
   props: {
     id: {
       type: [String, Number],

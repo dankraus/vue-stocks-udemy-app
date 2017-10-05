@@ -1,25 +1,25 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../components/Home.vue';
-import Portfolio from '../components/portfolio/Portfolio.vue';
-import Stocks from '../components/stocks/Stocks.vue';
+import TheHomePage from '../components/TheHomePage.vue';
+import PortfolioStocks from '../components/portfolio/PortfolioStocks.vue';
+import StockList from '../components/stocks/StockList.vue';
 
 Vue.use(VueRouter);
 
 export const routes = [
     {
         path: '/',
-        component: Home,
+        component: TheHomePage,
         name: 'Home'
     },
     {
         path: '/stocks',
-        component: Stocks,
+        component: StockList,
         name: 'Stocks'
     },
     {
         path: '/portfolio',
-        component: Portfolio,
+        component: PortfolioStocks,
         name: 'Portfolio'
     },
 ];
